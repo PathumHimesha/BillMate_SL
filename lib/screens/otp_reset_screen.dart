@@ -13,13 +13,13 @@ class _OtpResetScreenState extends State<OtpResetScreen> {
   final List<TextEditingController> _controllers = List.generate(4, (index) => TextEditingController());
   final List<FocusNode> _focusNodes = List.generate(4, (index) => FocusNode());
   
-  // The secret code for your presentation!
+ 
   final String _correctOtp = "1234"; 
 
   @override
   void initState() {
     super.initState();
-    // Simulate receiving an SMS after 1.5 seconds (gives the screen time to load)
+   
     Future.delayed(const Duration(milliseconds: 1500), () {
       _showOtpPopup();
     });
@@ -32,16 +32,16 @@ class _OtpResetScreenState extends State<OtpResetScreen> {
     super.dispose();
   }
 
-  // --- NEW: We moved the pop-up into its own function so we can reuse it! ---
+ 
   void _showOtpPopup() {
     if (mounted) {
-      // Clear any existing snackbars first so they don't overlap
+      
       ScaffoldMessenger.of(context).clearSnackBars(); 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Message from BillMate: Your verification code is $_correctOtp'),
           backgroundColor: const Color(0xFF1E3A8A),
-          duration: const Duration(seconds: 6), // Stays on screen a bit longer
+          duration: const Duration(seconds: 6), 
           behavior: SnackBarBehavior.floating,
         ),
       );
