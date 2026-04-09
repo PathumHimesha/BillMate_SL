@@ -17,10 +17,10 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _isLoading = false;
 
-  // 🔔 දැනට තෝරාගෙන ඇති භාෂාව (en, si, ta)
-  String _currentLang = 'si'; // Default එක සිංහල විදිහට තියමු (Screenshots වල තිබ්බ නිසා)
+  
+  String _currentLang = 'si';
 
-  // 🔔 භාෂා 3 සඳහා අවශ්‍ය වචන මාලාව (Dictionary)
+  
   final Map<String, Map<String, String>> _localizedStrings = {
     'en': {
       'welcome': 'Welcome Back',
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   };
 
-  // වචන ගන්න ලේසි වෙන්න හදපු පොඩි function එකක්
+  
   String translate(String key) {
     return _localizedStrings[_currentLang]?[key] ?? '';
   }
@@ -263,7 +263,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  // 🔔 භාෂාව මාරු කරන බටන් එක හදන කොටස
+  
   Widget _buildLangButton(String text, String langCode) {
     bool isActive = _currentLang == langCode;
     return GestureDetector(
