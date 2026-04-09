@@ -35,7 +35,7 @@ class _PaymentHistoryScreenState extends State<PaymentHistoryScreen> {
       ),
       body: Column(
         children: [
-          // --- SEARCH BAR ---
+          
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: TextField(
@@ -53,7 +53,7 @@ class _PaymentHistoryScreenState extends State<PaymentHistoryScreen> {
             ).animate().fade().slideY(begin: -0.2),
           ),
 
-          // --- HISTORY LIST ---
+         
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
@@ -79,7 +79,7 @@ class _PaymentHistoryScreenState extends State<PaymentHistoryScreen> {
 
                 var docs = snapshot.data!.docs;
                 
-                // Search filter
+               
                 var filteredDocs = docs.where((doc) {
                   var data = doc.data() as Map<String, dynamic>;
                   String type = (data['type'] ?? '').toString().toLowerCase();
@@ -94,7 +94,7 @@ class _PaymentHistoryScreenState extends State<PaymentHistoryScreen> {
                     var data = filteredDocs[index].data() as Map<String, dynamic>;
                     bool isElec = data['type'] == 'Electricity';
                     
-                    // Format Date
+                    
                     String dateStr = '';
                     if (data['paidOn'] != null) {
                       DateTime dt = (data['paidOn'] as Timestamp).toDate();
@@ -147,7 +147,7 @@ class _PaymentHistoryScreenState extends State<PaymentHistoryScreen> {
                               ],
                             ),
                             const SizedBox(width: 16),
-                            // Download Button
+                            
                             GestureDetector(
                               onTap: () {
                                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Downloading Receipt...')));
