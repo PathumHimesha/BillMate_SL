@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: bgColor,
       body: Stack(
         children: [
-          // --- HEADER BACKGROUND ---
+          
           Container(
             height: MediaQuery.of(context).size.height * 0.35,
             decoration: BoxDecoration(
@@ -50,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ).animate().fadeIn(duration: 800.ms),
 
-          // --- MAIN CONTENT ---
+       
           SafeArea(
             child: Column(
               children: [
@@ -94,7 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         
                         const SizedBox(height: 40),
 
-                        // --- SETTINGS LIST CARD (SECURITY REMOVED) ---
+                       
                         Container(
                           margin: const EdgeInsets.symmetric(horizontal: 24),
                           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -105,7 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           child: Column(
                             children: [
-                              // 1. Dark Mode
+                             
                               ListTile(
                                 leading: Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFF4F46E5).withOpacity(0.1), shape: BoxShape.circle), child: Icon(isDark ? Icons.dark_mode : Icons.light_mode, color: const Color(0xFF4F46E5))),
                                 title: Text('Dark Mode', style: TextStyle(color: textColor, fontWeight: FontWeight.bold, fontSize: 16)),
@@ -120,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               Padding(padding: const EdgeInsets.symmetric(horizontal: 20), child: Divider(color: isDark ? Colors.grey.shade800 : Colors.grey.shade200)),
                               
-                              // 2. Payment Methods
+                            
                               if (!isAdmin) ...[
                                 ListTile(
                                   leading: Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: Colors.green.withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.credit_card, color: Colors.green)),
@@ -131,7 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 Padding(padding: const EdgeInsets.symmetric(horizontal: 20), child: Divider(color: isDark ? Colors.grey.shade800 : Colors.grey.shade200)),
                               ],
                               
-                              // 3. Help & Support
+                             
                               ListTile(
                                 leading: Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: Colors.cyan.withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.help_outline, color: Colors.cyan)),
                                 title: Text('Help & Support', style: TextStyle(color: textColor, fontWeight: FontWeight.bold, fontSize: 16)),
@@ -140,7 +140,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               ),
                               Padding(padding: const EdgeInsets.symmetric(horizontal: 20), child: Divider(color: isDark ? Colors.grey.shade800 : Colors.grey.shade200)),
 
-                              // 4. About
+                              
                               ListTile(
                                 leading: Container(padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: Colors.redAccent.withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.info_outline, color: Colors.redAccent)),
                                 title: Text('About BillMate SL', style: TextStyle(color: textColor, fontWeight: FontWeight.bold, fontSize: 16)),
