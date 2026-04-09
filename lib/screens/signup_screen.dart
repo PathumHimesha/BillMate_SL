@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'dashboard_screen.dart';
-import '../theme_notifier.dart'; // 🔔 Dark mode එකට
+import '../theme_notifier.dart'; 
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -228,7 +228,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       children: [
                         Text("Already have an account?", style: TextStyle(color: subTextColor, fontSize: 15)),
                         TextButton(
-                          onPressed: () => Navigator.pop(context), // 🔔 ආපහු Login එකට යනවා
+                          onPressed: () => Navigator.pop(context),
                           child: const Text('Login', style: TextStyle(color: Color(0xFF4F46E5), fontWeight: FontWeight.bold, fontSize: 16)),
                         ),
                       ],
