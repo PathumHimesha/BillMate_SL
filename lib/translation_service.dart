@@ -1,25 +1,24 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TranslationService {
-  static String currentLang = 'en'; // Default English
-
-  // App eka on weddi save wela thiyena language eka load karanna
+  static String currentLang = 'en'; 
+  
   static Future<void> loadLanguage() async {
     final prefs = await SharedPreferences.getInstance();
     currentLang = prefs.getString('app_language') ?? 'en';
   }
 
-  // Language eka maru karama eka save karanna
+ 
   static Future<void> setLanguage(String langCode) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('app_language', langCode);
     currentLang = langCode;
   }
 
-  // Wachana list eka (Dictionary)
+
   static const Map<String, Map<String, String>> _dictionary = {
     'en': {
-      // Login & Dashboard
+      
       'welcome': 'Welcome Back',
       'subtitle': 'Official Utility Billing Portal',
       'email': 'Email Address',
@@ -37,7 +36,7 @@ class TranslationService {
       'estimate_title': 'Monthly Consumption Estimate',
       'view_history': 'View Payment History',
       'pay_all': 'Pay All Unpaid Bills',
-      // New Screens (Profile, History, Add Utility)
+     
       'my_profile': 'My Profile',
       'set_budget': 'Set Monthly Budget',
       'security': 'Security & Password',
